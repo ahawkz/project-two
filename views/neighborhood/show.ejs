@@ -13,11 +13,9 @@
     </header>
     <main>
       <div class="restaurant cards">
-        <% console.log(neighborhood.name) %>
-        <% console.log(restaurant[0].neighborhood) %>
         <% for (let i = 0; i < restaurant.length; i++) { %>
           <% if(neighborhood.name == restaurant[i].neighborhood) { %>
-             <h4><%=restaurant[i].name%></h4>
+             <h4><a href="/undertheradar/restaurant/<%=restaurant[i].id%>"><%=restaurant[i].name%></a></h4>
           <% } %>
         <% } %>
       </div>

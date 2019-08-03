@@ -30,11 +30,20 @@ neighborhood.get('/undertheradar/:id', (req, res) => {
   })
 });
 
-//show restaurants in that neighborhood
-neighborhood.get('/undertheradar/:id', (req, res) => {
-  Neighborhood.findById(req.params.id, (err, foundNeighborhood) => {
-    res.render('neighborhood/show.ejs', {
-      neighborhood: foundNeighborhood
+// //show restaurants in that neighborhood
+// neighborhood.get('/undertheradar/:id', (req, res) => {
+//   Neighborhood.findById(req.params.id, (err, foundNeighborhood) => {
+//     res.render('neighborhood/show.ejs', {
+//       neighborhood: foundNeighborhood
+//     })
+//   })
+// });
+
+//show restaurant information
+neighborhood.get('/undertheradar/restaurant/:id', (req, res) => {
+  Restaurant.findById(req.params.id, (err, restaurantInfo) => {
+    res.render('neighborhood/restaurant.ejs', {
+      restaurant: restaurantInfo
     })
   })
 });
