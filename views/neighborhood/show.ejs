@@ -11,5 +11,16 @@
         <a href="/undertheradar">Home</a>
       </nav>
     </header>
+    <main>
+      <div class="restaurant cards">
+        <% console.log(neighborhood.name) %>
+        <% console.log(restaurant[0].neighborhood) %>
+        <% for (let i = 0; i < restaurant.length; i++) { %>
+          <% if(neighborhood.name == restaurant[i].neighborhood) { %>
+             <h4><%=restaurant[i].name%></h4>
+          <% } %>
+        <% } %>
+      </div>
+    </main>
   </body>
 </html>
