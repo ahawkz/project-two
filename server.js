@@ -6,6 +6,8 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
+const Neighborhood = require('./models/neighborhoods.js');
+const manyNeighborhoods = require('./models/neighborhoodData.js');
 //controllers
 const neighborhoodController = require('./controllers/neighborhood.js');
 
@@ -47,9 +49,20 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
-// use neighborhood controller
+//neighborhood controlloer
 app.use('/', neighborhoodController);
 
+//___________________
+// Data
+//___________________
+app.get('/neighborhoods/seed', async (req, res) => {
+  try {
+   const seedItems = await Neighborhood.create(manyNeighborhoods)
+    res.redirect('/neighborhoods');
+  } catch (err) {
+    res.send(err.message)
+  }
+});
 //___________________
 // Routes
 //___________________
