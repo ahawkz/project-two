@@ -6,17 +6,17 @@
   </head>
   <body>
     <header>
-      <h1>Neighborhood Index Page</h1>
+      <h1>Home Page</h1>
     </header>
     <nav>
-        <a href="/undertheradar">Home</a></li>
+        <a href="/undertheradar">About</a></li>
     </nav>
     <main>
       <div class="">
         <h3>Neighborhoods</h3>
         <% for (let i = 0; i < neighborhoods.length; i++) { %>
           <div class="hood-buttons">
-            <a href="#"><%=neighborhoods[i].name%></a>
+            <button><a href="/undertheradar/<%=neighborhoods[i].id%>"><%=neighborhoods[i].name%></a></button>
           </div>
         <% } %>
       </div>
