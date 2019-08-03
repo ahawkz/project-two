@@ -3,7 +3,7 @@ const manyRestaurants = [
     name: 'Ramayana',
     rating: 4,
     cuisine: 'Indonesian',
-    comments: 'Heard it\'s cheap!',
+    comments: 'Heard it is cheap!',
     wishList: true,
     neighborhood: 'East Passyunk'
   },

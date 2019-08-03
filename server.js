@@ -7,7 +7,9 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 const Neighborhood = require('./models/neighborhoods.js');
+const Restaurant = require('./models/restaurants.js');
 const manyNeighborhoods = require('./models/neighborhoodData.js');
+const manyRestaurants = require('./models/restaurantsData.js');
 //controllers
 const neighborhoodController = require('./controllers/neighborhood.js');
 
@@ -58,7 +60,16 @@ app.use('/', neighborhoodController);
 app.get('/neighborhoods/seed', async (req, res) => {
   try {
    const seedItems = await Neighborhood.create(manyNeighborhoods)
-    res.redirect('/neighborhoods');
+    res.redirect('/undertheradar');
+  } catch (err) {
+    res.send(err.message)
+  }
+});
+
+app.get('/restaurants/seed', async (req, res) => {
+  try {
+   const seedItems = await Restaurant.create(manyRestaurants)
+    res.redirect('/undertheradar');
   } catch (err) {
     res.send(err.message)
   }
