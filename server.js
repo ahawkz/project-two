@@ -8,7 +8,6 @@ const app = express ();
 const db = mongoose.connection;
 //controllers
 const neighborhoodController = require('./controllers/neighborhood.js');
-app.use('/neighborhood', neighborhoodController);
 
 
 //___________________
@@ -42,22 +41,22 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 
 //use public folder for static assets
 app.use(express.static('public'));
-
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
-
+// use neighborhood controller
+app.use('/', neighborhoodController);
 
 //___________________
 // Routes
 //___________________
 //localhost:3000
-app.get('/' , (req, res) => {
-  res.render('index.ejs')
-});
+// app.get('/' , (req, res) => {
+//   res.render('index.ejs')
+// });
 
 //___________________
 //Listener
