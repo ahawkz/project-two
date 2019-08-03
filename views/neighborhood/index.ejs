@@ -9,15 +9,16 @@
       <h1>Neighborhood Index Page</h1>
     </header>
     <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <!-- <li><a href="/neighborhood/new">Add New Neighborhood</a></li> -->
-      </ul>
+        <a href="/">Home</a></li>
     </nav>
     <main>
       <div class="">
         <h3>Neighborhoods</h3>
-          <button><a href="/neighborhood/:id">Fishtown</a></button>
+        <% for (let i = 0; i < neighborhoods.length; i++) { %>
+          <div class="hood-buttons">
+            <a href="#"><%=neighborhoods[i].name%></a>
+          </div>
+        <% } %>
       </div>
     </main>
   </body>
