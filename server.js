@@ -7,8 +7,8 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 //controllers
-const restaurantsController = require('./controllers/restaurants.js');
-
+const neighborhoodController = require('./controllers/neighborhood.js');
+app.use('/neighborhood', neighborhoodController);
 
 
 //___________________
@@ -39,7 +39,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //___________________
 //Middleware
 //___________________
-app.use('/neighborhood', restaurantsController);
+
 //use public folder for static assets
 app.use(express.static('public'));
 
