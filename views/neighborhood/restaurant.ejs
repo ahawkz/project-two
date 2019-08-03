@@ -5,6 +5,26 @@
     <title></title>
   </head>
   <body>
-    <h1><%=restaurant.name%></h1>
+    <header>
+      <h1><%=restaurant.name%></h1>
+      <nav>
+        <button><a href="/undertheradar">Home</a></button>
+        <button><a href="#">Edit</a></button>
+        <button><a href="#">Delete</a></button>
+      </nav>
+    </header>
+    <main>
+      Cuisine: <%=restaurant.cuisine%> <br/>
+      Rating:
+      <% if (restaurant.rating === 0) { %>
+        None <br/>
+      <% } else { %>
+        <%=restaurant.rating%> <br/>
+      <% } %>
+      Notes: <%=restaurant.comments%> <br/>
+      <% if(restaurant.wishList === true) { %>
+        <button><a href="#">Check Off Wish List</a></button>
+      <% } %>
+    </main>
   </body>
 </html>
