@@ -33,7 +33,13 @@ const manyNeighborhoods = [
     name: 'Old City',
   },
   {
+    name: 'South Philly',
+  },
+  {
     name: 'Washington Square',
+  },
+  {
+    name: 'University City',
   }
 ]
 
