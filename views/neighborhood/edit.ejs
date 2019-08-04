@@ -5,6 +5,27 @@
     <title></title>
   </head>
   <body>
-    <h1>edit page</h1>
+    <header>
+      <h1>Edit: <%=restaurant.name%></h1>
+      <nav>
+        <a href="/undertheradar/restaurant/<%=restaurant._id%>"><button>Back to Restaurant</button></a>
+      </nav>
+    </header>
+    <main>
+      <form class="" action="/undertheradar/restaurant/<%=restaurant._id%>?_method=PUT" method="POST">
+        Name: <input type="text" name="name"  value="<%=restaurant.name%>"/><br/>
+        Cuisine: <input type="text" name="cuisine" value="<%=restaurant.cuisine%>"/><br/>
+        Rating: <input type="text" name="rating" value="<%=restaurant.rating%>"/><br/>
+        Comments: <input type="text" name="comments" value="<%=restaurant.comments%>"/><br/>
+        Wish List: <input type="checkbox" name="wishList"
+          input=
+          <%if(restaurant.wishList === true) { %>
+            checked
+          <% } %>
+          /><br/>
+        <input type="submit" value="Add Restaurant">
+      </form>
+    </div>
+    </main>
   </body>
 </html>
