@@ -6,20 +6,21 @@
   </head>
   <body>
     <header>
-      <h1>Add New Restaurant</h1>
+      <h1>Add New Restaurant: <%=neighborhood.name%></h1>
       <nav>
-        <button><a href="#">Home</a></button>
-        <button><a href="#"></a>Neighborhood</button>
+        <button><a href="/undertheradar">Home</a></button>
+        <button><a href="/undertheradar/<%=neighborhood._id%>">Neighborhood</a></button>
       </nav>
     </header>
     <main>
       <div class="">
-        <form class="" action="" method="">
+        <form class="" action="/undertheradar/<%=neighborhood._id%>" method="POST">
           Name: <input type="text" name="name"/><br/>
           Cuisine: <input type="text" name="cuisine"/><br/>
           Rating: <input type="text" name="rating"/><br/>
           Comments: <input type="text" name="description"/><br/>
           Wish List: <input type="checkbox" name="wishList"/><br/>
+          Neighborhood: <input type="text" name="neighborhood" value="<%=neighborhood.name%>"/> <br/>
           <input type="submit" value="Add Restaurant">
         </form>
       </div>

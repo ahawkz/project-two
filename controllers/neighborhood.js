@@ -18,9 +18,15 @@ neighborhood.get('/undertheradar', (req, res) => {
 });
 
 //new
-neighborhood.get('/undertheradar/new', (req, res) => {
-  res.render('neighborhood/new.ejs');
+neighborhood.get('/undertheradar/:id/new', (req, res) => {
+   Neighborhood.findById(req.params.id, (err, neighborhood) => {
+       res.render('neighborhood/new.ejs', {
+         neighborhood: neighborhood
+       });
+   })
 })
+
+
 
 //show restaurant information
 neighborhood.get('/undertheradar/restaurant/:id', (req, res) => {
@@ -35,8 +41,8 @@ neighborhood.get('/undertheradar/restaurant/:id', (req, res) => {
 // show individual neighborhoods
 neighborhood.get('/undertheradar/:id', (req, res) => {
   Neighborhood.findById(req.params.id, (err, foundNeighborhood) => {
-    // console.log(Restaurant[0].category);
     Restaurant.find({}, (err, foundRestaurants) => {
+      console.log(foundRestaurants);
       res.render('neighborhood/show.ejs', {
         neighborhood: foundNeighborhood,
         restaurant: foundRestaurants
@@ -45,6 +51,17 @@ neighborhood.get('/undertheradar/:id', (req, res) => {
   })
 });
 
+//create
+neighborhood.post('/undertheradar/:id', (req, res) => {
+  if(req.body.wishList === 'on'){
+    req.body.wishList = true;
+  } else {
+    req.body.wishList = false;
+  };
+  Restaurant.create(req.body, (error, restaurant) => {
+    res.redirect('/undertheradar/' + req.params.id);
+  })
+});
 
 
 // ========== EXPORT ========== //
