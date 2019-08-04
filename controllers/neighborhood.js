@@ -51,7 +51,7 @@ neighborhood.get('/undertheradar/:id', (req, res) => {
   })
 });
 
-//create
+//create new restaurant
 neighborhood.post('/undertheradar/:id', (req, res) => {
   if(req.body.wishList === 'on'){
     req.body.wishList = true;
@@ -60,6 +60,15 @@ neighborhood.post('/undertheradar/:id', (req, res) => {
   };
   Restaurant.create(req.body, (error, restaurant) => {
     res.redirect('/undertheradar/' + req.params.id);
+  })
+});
+
+//Edit existing restaurant
+neighborhood.get('/undertheradar/:id/edit', (req, res) => {
+  Restaurant.findById(req.params.id, (err, foundRestaurant) => {
+      res.render('neighborhood/edit.ejs', {
+      restaurant: foundRestaurant
+    })
   })
 });
 
