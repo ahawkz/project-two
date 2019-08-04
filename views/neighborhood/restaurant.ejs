@@ -11,7 +11,10 @@
         <a href="/undertheradar"><button>Home</button</a>
         <a href="/undertheradar/<%=restaurant.neighborhood%>"><button>Back to Neighborhood</button></a>
         <a href="/undertheradar/<%=restaurant._id%>/edit"><button>Edit</button></a>
-        <a href="#"><button>Delete</button></a>
+
+        <form class="" action="/undertheradar/restaurant/<%=restaurant._id%>?_method=DELETE" method="POST">
+          <input type="submit" value="DELETE">
+        </form>
       </nav>
     </header>
     <main>
