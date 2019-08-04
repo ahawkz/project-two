@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <% include ../partials/head.ejs %>
   </head>
   <body>
     <header>
@@ -17,7 +16,7 @@
         <h3>Neighborhoods</h3>
         <% for (let i = 0; i < neighborhoods.length; i++) { %>
           <div class="hood-buttons">
-            <button><a href="/undertheradar/<%=neighborhoods[i].id%>"><%=neighborhoods[i].name%></a></button>
+            <a href="/undertheradar/<%=neighborhoods[i].id%>">  <button><%=neighborhoods[i].name%> </button></a>
           </div>
         <% } %>
       </div>

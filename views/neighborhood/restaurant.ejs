@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <% include ../partials/head.ejs %>
   </head>
   <body>
     <header>
       <h1><%=restaurant.name%></h1>
       <nav>
-        <a href="/undertheradar"><button>Home</button</a>
-        <a href="/undertheradar/<%=restaurant.neighborhood%>"><button>Back to Neighborhood</button></a>
-        <a href="/undertheradar/<%=restaurant._id%>/edit"><button>Edit</button></a>
+        <a href="/undertheradar"><button class="waves-effect waves-light btn-small">Home</button></a>
 
-        <form class="" action="/undertheradar/restaurant/<%=restaurant._id%>?_method=DELETE" method="POST">
-          <input type="submit" value="DELETE">
-        </form>
+
+        <a href="/undertheradar/<%=neighborhood[0]._id%>"><button class="waves-effect waves-light btn-small">Back to Neighborhood</button></a>
+
+
+        <a href="/undertheradar/<%=restaurant._id%>/edit"><button class="waves-effect waves-light btn-small">Edit</button></a>
       </nav>
     </header>
     <main>
@@ -27,8 +26,11 @@
       <% } %>
       Notes: <%=restaurant.comments%> <br/>
       <% if(restaurant.wishList === true) { %>
-        <button><a href="#">Check Off Wish List</a></button>
+        <a href="#"><button>Check Off Wish List</button></a>
       <% } %>
+      <form class="" action="/undertheradar/restaurant/<%=restaurant._id%>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE">
+      </form>
     </main>
   </body>
 </html>

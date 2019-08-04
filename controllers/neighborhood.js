@@ -28,16 +28,16 @@ neighborhood.get('/undertheradar/:id/new', (req, res) => {
 
 //show restaurant information (restaurant.ejs page)
 neighborhood.get('/undertheradar/restaurant/:id', (req, res) => {
-  Restaurant.findById(req.params.id, (err, restaurantInfo) => {
-    // Neighborhood.findById(req.params.neighborhoodId, (err, foundNeighborhood) => {
-    //   console.log(req.params.neighborhoodId);
-      res.render('neighborhood/restaurant.ejs', {
-        restaurant: restaurantInfo,
-      //   neighborhood: foundNeighborhood
-      // })
+    Restaurant.findById(req.params.id, (err, restaurantInfo) => {
+      Neighborhood.find({name: restaurantInfo.neighborhood}, (err, foundNeighborhood) => {
+        console.log(foundNeighborhood);
+        res.render('neighborhood/restaurant.ejs', {
+          restaurant: restaurantInfo,
+          neighborhood: foundNeighborhood
+        })
+      })
     })
-  })
-});
+  });
 
 // show individual neighborhoods (show.ejs page)
 neighborhood.get('/undertheradar/:id', (req, res) => {

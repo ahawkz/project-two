@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <% include ../partials/head.ejs %>
   </head>
   <body>
     <header>
       <h1><%=neighborhood.name%></h1>
       <nav>
-        <button><a href="/undertheradar">Home</a></button>
-        <button><a href="/undertheradar/<%=neighborhood._id%>/new">Add Restaurant</a></button>
+        <a href="/undertheradar"><button>Home</button></a>
+        <a href="/undertheradar/<%=neighborhood._id%>/new"><button>Add Restaurant</button></a>
       </nav>
     </header>
     <main>
