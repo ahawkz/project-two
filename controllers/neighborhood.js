@@ -17,6 +17,21 @@ neighborhood.get('/undertheradar', (req, res) => {
   })
 });
 
+//new
+neighborhood.get('/undertheradar/new', (req, res) => {
+  res.render('neighborhood/new.ejs');
+})
+
+//show restaurant information
+neighborhood.get('/undertheradar/restaurant/:id', (req, res) => {
+  Restaurant.findById(req.params.id, (err, restaurantInfo) => {
+    res.render('neighborhood/restaurant.ejs', {
+      restaurant: restaurantInfo
+    })
+  })
+});
+
+
 // show individual neighborhoods
 neighborhood.get('/undertheradar/:id', (req, res) => {
   Neighborhood.findById(req.params.id, (err, foundNeighborhood) => {
@@ -30,23 +45,7 @@ neighborhood.get('/undertheradar/:id', (req, res) => {
   })
 });
 
-// //show restaurants in that neighborhood
-// neighborhood.get('/undertheradar/:id', (req, res) => {
-//   Neighborhood.findById(req.params.id, (err, foundNeighborhood) => {
-//     res.render('neighborhood/show.ejs', {
-//       neighborhood: foundNeighborhood
-//     })
-//   })
-// });
 
-//show restaurant information
-neighborhood.get('/undertheradar/restaurant/:id', (req, res) => {
-  Restaurant.findById(req.params.id, (err, restaurantInfo) => {
-    res.render('neighborhood/restaurant.ejs', {
-      restaurant: restaurantInfo
-    })
-  })
-});
 
 // ========== EXPORT ========== //
 module.exports = neighborhood;
