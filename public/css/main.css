@@ -55,6 +55,12 @@ main {
   color: black;
   width: 150px;
 }
+.articles{
+  margin-top: 45px;
+  background-color: #FEFFFF;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px gray;
+}
 
 /* === SHOW PAGE === */
 h4{
@@ -83,7 +89,15 @@ h4{
 }
 
 /* === EDIT PAGE === */
-
+.edit-btn{
+  width: 200px;
+}
+.form {
+  background-color: #FEFFFF;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px gray;
+  padding: 10px;
+}
 /* === FOOTER === */
 footer {
   text-align: center;

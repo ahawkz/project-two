@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <% include ../partials/head.ejs %>
-  </head>
+<head>
+  <% include ../partials/head.ejs %>
+</head>
   <body>
-    <header>
-      <h1>Edit: <%=restaurant.name%></h1>
-      <nav>
-        <a href="/undertheradar/restaurant/<%=restaurant._id%>"><button>Back to Restaurant</button></a>
-      </nav>
-    </header>
-    <main>
-      <form class="" action="/undertheradar/restaurant/<%=restaurant._id%>?_method=PUT" method="POST">
-        Name: <input type="text" name="name"  value="<%=restaurant.name%>"/><br/>
+    <div class="container">
+      <header class="header">
+        <% include ../partials/header.ejs %>
+      </header>
+      <main>
+      <h4>Edit: <a href="/undertheradar/restaurant/<%=restaurant._id%>"><button class='buttons waves-effect waves-light btn-small cyan lighten-5 hoverable edit-btn'><%=restaurant.name%></button></a></h4>
+      <div class="divider"></div>
+      <div class="section">
+      <form class="form" action="/undertheradar/restaurant/<%=restaurant._id%>?_method=PUT" method="POST">
+        <div class="input-field col s6">
+          Name: <input type="text" name="name"  value="<%=restaurant.name%>"/><br/>
+        </div>
+        <div class="input-field col s6">
         Cuisine: <input type="text" name="cuisine" value="<%=restaurant.cuisine%>"/><br/>
+        </div>
+        <div class="input-field col s6">
         Rating: <input type="text" name="rating" value="<%=restaurant.rating%>"/><br/>
+        </div>
+        <div class="input-field col s6">
         Comments: <input type="text" name="comments" value="<%=restaurant.comments%>"/><br/>
-        Wish List: <input type="checkbox" name="wishList"
-          input=
-          <%if(restaurant.wishList === true) { %>
-            checked
-          <% } %>
-          /><br/>
-        <input type="submit" value="Add Restaurant">
+        </div>
+        <div class="input-field col s6">
+        </div>
+        <input class="buttons waves-effect waves-light btn-small cyan lighten-5 hoverable" type="submit" value="Add Restaurant"> <br/>
       </form>
-    </div>
+      </div>
     </main>
+    <footer class="container">
+      <% include ../partials/footer.ejs %>
+    </footer>
+    </div>
   </body>
 </html>

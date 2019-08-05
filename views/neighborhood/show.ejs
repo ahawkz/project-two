@@ -18,7 +18,7 @@
           <div class="flex-box">
             <% for (let i = 0; i < restaurant.length; i++) { %>
               <% if(neighborhood.name == restaurant[i].neighborhood) { %>
-              <div class="card">
+              <div class="card hoverable">
                 <a href="/undertheradar/restaurant/<%=restaurant[i].id%>"><img class="responsive-img card-image" src="<%=restaurant[i].img%>" alt=""></a>
                 <span class="card-title"><a href="/undertheradar/restaurant/<%=restaurant[i].id%>"><%=restaurant[i].name%></a></span>
               </div>
