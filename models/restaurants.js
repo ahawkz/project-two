@@ -7,7 +7,8 @@ const restaurantsSchema = new mongoose.Schema({
   comments: [{ type: String, date: Date }],
   date: {type: Date, default: Date.now},
   wishList: {type: Boolean},
-  neighborhood: String
+  neighborhood: String,
+  img: String
 })
 
 const Restaurants = mongoose.model('Restaurants', restaurantsSchema);

@@ -4,21 +4,31 @@
     <% include ../partials/head.ejs %>
   </head>
   <body>
-    <header>
-      <h1><%=neighborhood.name%></h1>
-      <nav>
-        <a href="/undertheradar"><button>Home</button></a>
-        <a href="/undertheradar/<%=neighborhood._id%>/new"><button>Add Restaurant</button></a>
-      </nav>
+    <div class="container">
+    <header class="header">
+      <% include ../partials/header.ejs %>
     </header>
     <main>
-      <div class="restaurant cards">
-        <% for (let i = 0; i < restaurant.length; i++) { %>
-          <% if(neighborhood.name == restaurant[i].neighborhood) { %>
-             <h4><a href="/undertheradar/restaurant/<%=restaurant[i].id%>"><%=restaurant[i].name%></a></h4>
-          <% } %>
-        <% } %>
+      <h4><%=neighborhood.name%></h4>
+      <a href="/undertheradar"><button>Home</button></a>
+      <a href="/undertheradar/<%=neighborhood._id%>/new"><button>Add Restaurant</button></a>
+      <div class="divider"></div>
+      <div class="section">
+        <div class="row">
+          <div class="flex-box">
+            <% for (let i = 0; i < restaurant.length; i++) { %>
+              <% if(neighborhood.name == restaurant[i].neighborhood) { %>
+              <div class="card">
+                <img class="responsive-img card-image" src="<%=restaurant[i].img%>" alt="">
+                <span class="card-title"><a href="/undertheradar/restaurant/<%=restaurant[i].id%>"><%=restaurant[i].name%></a></span>
+              </div>
+              <% } %>
+            <% } %>
+          </div>
+        </div>
       </div>
+      <a href="/undertheradar/<%=neighborhood._id%>/new"><i class="medium material-icons">add_box</i></a>
     </main>
+    </div>
   </body>
 </html>
