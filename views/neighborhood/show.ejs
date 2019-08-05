@@ -9,9 +9,9 @@
       <% include ../partials/header.ejs %>
     </header>
     <main>
-      <h4><%=neighborhood.name%></h4>
-      <a href="/undertheradar"><button>Home</button></a>
-      <a href="/undertheradar/<%=neighborhood._id%>/new"><button>Add Restaurant</button></a>
+      <h4 class="show-h4"><%=neighborhood.name%></h4>
+      <!-- <a href="/undertheradar"><button>Home</button></a> -->
+      <!-- <a href="/undertheradar/<%=neighborhood._id%>/new"><button>Add Restaurant</button></a> -->
       <div class="divider"></div>
       <div class="section">
         <div class="row">
@@ -19,7 +19,7 @@
             <% for (let i = 0; i < restaurant.length; i++) { %>
               <% if(neighborhood.name == restaurant[i].neighborhood) { %>
               <div class="card">
-                <img class="responsive-img card-image" src="<%=restaurant[i].img%>" alt="">
+                <a href="/undertheradar/restaurant/<%=restaurant[i].id%>"><img class="responsive-img card-image" src="<%=restaurant[i].img%>" alt=""></a>
                 <span class="card-title"><a href="/undertheradar/restaurant/<%=restaurant[i].id%>"><%=restaurant[i].name%></a></span>
               </div>
               <% } %>
@@ -30,5 +30,8 @@
       <a href="/undertheradar/<%=neighborhood._id%>/new"><i class="medium material-icons">add_box</i></a>
     </main>
     </div>
+  <footer class="container">
+    <% include ../partials/footer.ejs %>
+  </footer>
   </body>
 </html>
