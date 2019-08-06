@@ -4,32 +4,34 @@
     <% include ../partials/head.ejs %>
   </head>
   <body>
-    <div class="header-wrap">
-      <header class="header">
-        <% include ../partials/header.ejs %>
-      </header>
-    </div>
-    <div class="container">
-    <main>
-      <div class="row main-section">
-        <div class="btns section col s3">
-          <h6 class="index-h6">Neighborhoods</h6>
-          <% for (let i = 0; i < neighborhoods.length; i++) { %>
-            <div class="row">
-              <a href="/undertheradar/<%=neighborhoods[i].id%>"><button class="buttons waves-effect waves-light btn-small cyan lighten-5 header-btn hoverable"><%=neighborhoods[i].name%> </button></a>
-            </div>
-          <% } %>
-        </div>
-        <div class="articles section col s9">
-          <h6 class="index-h6">About UNDER THE RADAR </h6>
-            <p>Under The Radar is a Philadelphia-based website that allows users to explore restaurants that are not on popular "Best Of" lists. Add little-known restaurants to popular dining destinations and keep track of what's been ordered, what was loved, and what's to skip out on next time. #UnderTheRadar  </p>
-            <img class="city-img fork" src="../images/fork.png" alt="">
-          <h6 class="index-h6">About PHILADELPHIA </h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <img class="city-img" src="../images/city.png" alt="">
-        </div>
+    <div class="content-wrapper">
+      <div class="header-wrap">
+        <header class="header">
+          <% include ../partials/header.ejs %>
+        </header>
       </div>
-    </main>
+      <div class="container">
+      <main>
+        <div class="row main-section">
+          <div class="btns section col s3 m4 12">
+            <h6 class="index-h6">Neighborhoods</h6>
+            <% for (let i = 0; i < neighborhoods.length; i++) { %>
+              <div class="row">
+                <a href="/undertheradar/<%=neighborhoods[i].id%>"><button class="buttons waves-effect waves-light btn-small cyan lighten-5 header-btn hoverable"><%=neighborhoods[i].name%> </button></a>
+              </div>
+            <% } %>
+          </div>
+          <div class="articles section col s9 m8 12">
+            <h6 class="index-h6">About UNDER THE RADAR </h6>
+              <p>Under The Radar is a Philadelphia-based website that allows users to explore restaurants that are not on popular "Best Of" lists. Add little-known restaurants to popular dining destinations and keep track of what's been ordered, what was loved, and what's to skip out on next time. #UnderTheRadar  </p>
+              <img class="city-img fork" src="../images/fork.png" alt="">
+            <h6 class="index-h6">About PHILADELPHIA </h6>
+              <p>Philadelphia, or more commonly referred to as Philly, is the sixth-most populated city in the United States. Home to the Liberty Bell, cheesesteaks, water ice, hoagies, the Rocky Steps (read: Art Museum), Gritty, numerous sports teams and countless award-winning restaurants, Philly is certainly not one to miss.</p>
+              <img class="city-img" src="../images/city.png" alt="">
+          </div>
+        </div>
+      </main>
+      </div>
     </div>
     <% include ../partials/footer.ejs %>
   </body>

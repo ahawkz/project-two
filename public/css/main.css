@@ -1,13 +1,13 @@
 /* === GENERAL === */
 body {
   background-color: #4D6D9A;
-  position: relative;
   margin: 0 auto;
-  padding-bottom: 16rem;
-  min-height: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
-.container {
-
+.content-wrapper{
+  flex: 1 0 auto;
 }
 /* === INDEX PAGE === */
 .header-wrap{
@@ -22,10 +22,6 @@ body {
   flex-direction: row;
   justify-content: center;
 }
-.header a {
-  /* color: #99ced3; */
-  color: black;
-}
 .header h2 {
   font-family: 'Libre Caslon Text', serif;
   font-size: 30px;
@@ -33,27 +29,8 @@ body {
   text-align: center;
   align-self: center;
 }
-
-/* .header h2{
-  text-align: justify;
-  /* color: #EEEEEE; */
-  font-family: 'Anton', sans-serif;
-  padding: 10px;
-  line-height: 0.5em;
-  text-shadow: 2px 2px 2px gray;
-}
-.header span{
-  font-family: sans-serif;
-  font-size: 24px;
-  margin-top: 0;
+.header a {
   color: black;
-  letter-spacing: 0.6em;
-  text-shadow: none;
-  font-weight: 100;
-} */
-.header-city {
-  padding: 5px;
-  margin-bottom: 10px;
 }
 .index-h6{
   font-family: 'Anton', sans-serif;
@@ -61,9 +38,6 @@ body {
   text-transform: uppercase;
   padding: 5px;
   text-align: center;
-}
-main {
-  margin: 0 auto;
 }
 .btns {
   display: flex;
@@ -159,13 +133,10 @@ h4{
   width: 100%;
   height: 80px;
   box-shadow: 1px 1px 2px gray;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
+  flex-shrink: 0;
 }
 footer {
+  font-family: 'Libre Caslon Text', serif;
   text-transform: uppercase;
   color: #17252a;
   font-weight: 100;

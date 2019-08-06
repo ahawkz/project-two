@@ -3,12 +3,15 @@
   <head>
     <% include ../partials/head.ejs %>
   </head>
-  <div class="container">
   <body>
-    <header class="header">
-      <% include ../partials/header.ejs %>
-    </header>
+    <div class="content-wrapper">
+    <div class="header-wrap">
+      <header class="header">
+        <% include ../partials/header.ejs %>
+      </header>
+    </div>
     <main>
+      <div class="container">
       <div class="section">
         <h4>Add New Restaurant: <%=neighborhood.name%></h4>
         <a href="/undertheradar/<%=neighborhood._id%>"><button class="class='waves-effect waves-light btn-small cyan lighten-5 hoverable show-btn">Back to Neighborhood</button></a>
@@ -34,10 +37,6 @@
               <input type="text" name="comments"/><br/>
             </div>
             <div class="row">
-              <label for="wishList">Add to Wish List:</label>
-              <input type="checkbox" name="wishList"/><br/>
-            </div>
-            <div class="row">
               <label for="img">Image:</label>
               <input type="text" name="img" value="<%=neighborhood.img%>"/> <br/>
             </div>
@@ -52,9 +51,7 @@
         </div>
       </div>
     </main>
-    <footer class="container">
-      <% include ../partials/footer.ejs %>
-    </footer>
   </div>
+  <% include ../partials/footer.ejs %>
   </body>
 </html>
