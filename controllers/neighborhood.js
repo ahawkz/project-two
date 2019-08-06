@@ -7,7 +7,7 @@ const manyRestaurants = require('../models/restaurantsData.js');
 
 // ========== ROUTES ========== //
 
-//get db of neighborhoods on homepage
+//get db of neighborhoods on homepage // index
 neighborhood.get('/undertheradar', (req, res) => {
   Neighborhood.find({}, (error, allNeighborhoods) => {
     res.render('neighborhood/index.ejs',
