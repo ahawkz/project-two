@@ -48,6 +48,7 @@ body {
 .buttons {
   color: black;
   width: 150px;
+  font-size: 13px;
 }
 .articles{
   display: flex;

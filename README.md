@@ -9,5 +9,5 @@
 
 ## Unsolved Problems
 * CSS responsiveness on index page
-* footer that sticks to bottom of page but nowhere else
 * CSS is not dry
+* Buttons not in alphabetical order
