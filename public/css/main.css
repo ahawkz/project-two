@@ -1,22 +1,38 @@
 /* === GENERAL === */
 body {
-  background-color: #3AAFA9;
+  background-color: #4D6D9A;
 }
-a {
-  color: #17252a;
-}
+/* a {
+  color: #c96567;
+} */
 /* === INDEX PAGE === */
+.header-wrap{
+  background-color: #f7f9fb;
+  width: 100%;
+  padding-left: 100px;
+  height: 80px;
+  box-shadow: 1px 1px 2px gray;
+}
 .header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 }
 .header a {
-  color: #EEEEEE;
+  /* color: #99ced3; */
+  color: black;
 }
-.header h2{
+.header h2 {
+  font-family: 'Libre Caslon Text', serif;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  align-self: center;
+}
+
+/* .header h2{
   text-align: justify;
-  color: #EEEEEE;
+  /* color: #EEEEEE; */
   font-family: 'Anton', sans-serif;
   padding: 10px;
   line-height: 0.5em;
@@ -30,7 +46,7 @@ a {
   letter-spacing: 0.6em;
   text-shadow: none;
   font-weight: 100;
-}
+} */
 .header-city {
   padding: 5px;
   margin-bottom: 10px;
@@ -56,10 +72,21 @@ main {
   width: 150px;
 }
 .articles{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-top: 45px;
-  background-color: #FEFFFF;
+  background-color: #ffffff;
   border-radius: 4px;
   box-shadow: 2px 2px 2px gray;
+}
+.city-img{
+  width: 30%;
+  align-self: center;
+  padding-bottom: 20px;
+}
+.fork {
+  width: 13%;
 }
 
 /* === SHOW PAGE === */
@@ -84,13 +111,13 @@ h4{
 .material-icons{
   display: flex;
   justify-content: center;
-  color: #EEEEEE;
+  color: #f7f9fb;
   margin-bottom: 15px;
 }
 /* === NEW PAGE === */
 .form-new{
   padding: 20px;
-  background-color: #FEFFFF;
+  background-color: #f7f9fb;
   border-radius: 4px;
   box-shadow: 2px 2px 2px gray;
 }
@@ -102,15 +129,33 @@ h4{
   width: 200px;
 }
 .form {
-  background-color: #FEFFFF;
+  background-color: #f7f9fb;
   border-radius: 4px;
   box-shadow: 2px 2px 2px gray;
   padding: 10px;
 }
 /* === FOOTER === */
+.footer-wrap{
+  background-color: #f7f9fb;
+  width: 100%;
+  height: 80px;
+  box-shadow: 1px 1px 2px gray;
+}
 footer {
-  text-align: center;
   text-transform: uppercase;
   color: #17252a;
   font-weight: 100;
+  padding: 0 30px;
+}
+.social {
+  display: flex;
+  justify-content: flex-end;
+}
+.social {
+  align-items: center;
+  padding-right: 20px;
+}
+.social img {
+  width: 50px;
+  height: 50px;
 }
