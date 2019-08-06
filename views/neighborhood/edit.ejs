@@ -4,10 +4,12 @@
   <% include ../partials/head.ejs %>
 </head>
   <body>
-    <div class="container">
-      <header class="header">
-        <% include ../partials/header.ejs %>
-      </header>
+      <div class="header-wrap">
+        <header class="header">
+          <% include ../partials/header.ejs %>
+        </header>
+      </div>
+      <div class="container">
       <main>
       <h4>Edit: <a href="/undertheradar/restaurant/<%=restaurant._id%>"><button class='buttons waves-effect waves-light btn-small cyan lighten-5 hoverable edit-btn'><%=restaurant.name%></button></a></h4>
       <div class="divider"></div>
@@ -27,10 +29,10 @@
         </div>
         <div class="input-field col s6">
         </div>
-        <input class="buttons waves-effect waves-light btn-small cyan lighten-5 hoverable" type="submit" value="Add Restaurant"> <br/>
+        <input class="buttons waves-effect waves-light btn-small cyan lighten-5 hoverable" type="submit" value="Add Changes"> <br/>
       </form>
-      </div>
     </main>
-      <% include ../partials/footer.ejs %>
+    </div>
+    <% include ../partials/footer.ejs %>
   </body>
 </html>

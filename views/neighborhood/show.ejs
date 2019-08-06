@@ -4,10 +4,12 @@
     <% include ../partials/head.ejs %>
   </head>
   <body>
+    <div class="header-wrap">
+      <header class="header">
+        <% include ../partials/header.ejs %>
+      </header>
+    </div>
     <div class="container">
-    <header class="header">
-      <% include ../partials/header.ejs %>
-    </header>
     <main>
       <h4 class="show-h4"><%=neighborhood.name%></h4>
       <!-- <a href="/undertheradar"><button>Home</button></a> -->
