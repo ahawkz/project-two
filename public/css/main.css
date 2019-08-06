@@ -2,14 +2,11 @@
 body {
   background-color: #4D6D9A;
 }
-/* a {
-  color: #c96567;
-} */
 /* === INDEX PAGE === */
 .header-wrap{
   background-color: #f7f9fb;
   width: 100%;
-  padding-left: 100px;
+  /* padding-left: 100px; */
   height: 80px;
   box-shadow: 1px 1px 2px gray;
 }
@@ -133,6 +130,21 @@ h4{
   border-radius: 4px;
   box-shadow: 2px 2px 2px gray;
   padding: 10px;
+}
+/* === RESTAURANT PAGE === */
+.edit {
+  display: inline-block;
+}
+.restaurant-img {
+  width: 100%;
+  padding: 10px;
+}
+.restuarant-section {
+  padding-left: 15px;
+}
+.restaurant-btns {
+  display: flex;
+  justify-content: space-around;
 }
 /* === FOOTER === */
 .footer-wrap{

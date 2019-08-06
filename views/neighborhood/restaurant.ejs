@@ -4,33 +4,37 @@
     <% include ../partials/head.ejs %>
   </head>
   <body>
-    <header>
-      <h1><%=restaurant.name%></h1>
-      <nav>
-        <a href="/undertheradar"><button class="waves-effect waves-light btn-small">Home</button></a>
-
-
-        <a href="/undertheradar/<%=neighborhood[0]._id%>"><button class="waves-effect waves-light btn-small">Back to Neighborhood</button></a>
-
-
-        <a href="/undertheradar/<%=restaurant._id%>/edit"><button class="waves-effect waves-light btn-small">Edit</button></a>
-      </nav>
-    </header>
+    <div class="header-wrap">
+      <header class="header">
+        <% include ../partials/header.ejs %>
+      </header>
+    </div>
+    <div class="container">
     <main>
-      Cuisine: <%=restaurant.cuisine%> <br/>
-      Rating:
-      <% if (restaurant.rating === 0) { %>
-        None <br/>
-      <% } else { %>
-        <%=restaurant.rating%> <br/>
-      <% } %>
-      Notes: <%=restaurant.comments%> <br/>
-      <% if(restaurant.wishList === true) { %>
-        <a href="#"><button>Check Off Wish List</button></a>
-      <% } %>
-      <form class="" action="/undertheradar/restaurant/<%=restaurant._id%>?_method=DELETE" method="POST">
-        <input type="submit" value="DELETE">
-      </form>
+      <h4><%=restaurant.name%></h4>
+      <div class="divider"></div>
+      <div class="section articles">
+        <img class="responsive-img restaurant-img" src="<%=restaurant.img%>" alt="">
+        <h6 class="restuarant-section">Cuisine: <%=restaurant.cuisine%> <br/></h6>
+        <h6 class="restuarant-section">Rating:
+        <% if (restaurant.rating === 0) { %>
+          None <br/>
+        <% } else { %>
+          <%=restaurant.rating%> <br/>
+        <% } %> </h6>
+        <h6 class="restuarant-section">Notes: <%=restaurant.comments%></h6> <br/>
+        <div class="restaurant-btns">
+          <form class="buttons waves-effect waves-light btn-small cyan lighten-5  hoverable" action="/undertheradar/restaurant/<%=restaurant._id%>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE">
+          </form>
+          <a href="/undertheradar/<%=restaurant._id%>/edit"><button class="buttons waves-effect waves-light btn-small cyan lighten-5  hoverable">Edit</button></a>
+          <a href="/undertheradar/<%=neighborhood[0]._id%>"><button class="buttons waves-effect waves-light btn-small cyan lighten-5  hoverable back-to-neighborhood-btn">Neighborhood</button></a>
+        </div>
+      </div>
     </main>
+    </div>
+    <br/>
+    <br/>
+    <% include ../partials/footer.ejs %>
   </body>
 </html>
