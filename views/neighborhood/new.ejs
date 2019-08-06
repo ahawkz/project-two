@@ -3,26 +3,58 @@
   <head>
     <% include ../partials/head.ejs %>
   </head>
+  <div class="container">
   <body>
-    <header>
-      <h1>Add New Restaurant: <%=neighborhood.name%></h1>
-      <nav>
-        <button><a href="/undertheradar">Home</a></button>
-        <button><a href="/undertheradar/<%=neighborhood._id%>">Neighborhood</a></button>
-      </nav>
+    <header class="header">
+      <% include ../partials/header.ejs %>
     </header>
     <main>
-      <div class="">
-        <form class="" action="/undertheradar/<%=neighborhood._id%>" method="POST">
-          Name: <input type="text" name="name"/><br/>
-          Cuisine: <input type="text" name="cuisine"/><br/>
-          Rating: <input type="text" name="rating"/><br/>
-          Comments: <input type="text" name="description"/><br/>
-          Wish List: <input type="checkbox" name="wishList"/><br/>
-          Neighborhood: <input type="text" name="neighborhood" value="<%=neighborhood.name%>"/> <br/>
-          <input type="submit" value="Add Restaurant">
-        </form>
+      <div class="section">
+        <h4>Add New Restaurant: <%=neighborhood.name%></h4>
+        <a href="/undertheradar/<%=neighborhood._id%>"><button class="class='waves-effect waves-light btn-small cyan lighten-5 hoverable show-btn">Back to Neighborhood</button></a>
+      </div>
+      <div class="divider"></div>
+      <div class="section">
+        <div class="row form-new">
+          <form class="col s12" action="/undertheradar/<%=neighborhood._id%>" method="POST">
+            <div class="row">
+              <label for="name">Restaurant Name:</label>
+              <input type="text" name="name"/><br/>
+            </div>
+            <div class="row">
+              <label for="cuisine">Type of Cuisine:</label>
+              <input type="text" name="cuisine"/><br/>
+            </div>
+            <div class="row">
+              <label for="rating">Rating (0-5):</label>
+              <input type="text" name="rating"/><br/>
+            </div>
+            <div class="row">
+              <label for="comments">Comments</label>
+              <input type="text" name="comments"/><br/>
+            </div>
+            <div class="row">
+              <label for="wishList">Add to Wish List:</label>
+              <input type="checkbox" name="wishList"/><br/>
+            </div>
+            <div class="row">
+              <label for="img">Image:</label>
+              <input type="text" name="img" value="<%=neighborhood.img%>"/> <br/>
+            </div>
+            <div class="row">
+              <label for="neighborhood">Neighborhood:</label>
+              <input type="text" name="neighborhood" value="<%=neighborhood.name%>"/> <br/>
+            </div>
+            <div class="row">
+              <input type="submit" value="Add Restaurant" class="class='buttons waves-effect waves-light btn-small cyan lighten-5 hoverable show-btn">
+            </div>
+          </form>
+        </div>
       </div>
     </main>
+    <footer class="container">
+      <% include ../partials/footer.ejs %>
+    </footer>
+  </div>
   </body>
 </html>

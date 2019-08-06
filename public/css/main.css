@@ -87,7 +87,16 @@ h4{
   color: #EEEEEE;
   margin-bottom: 15px;
 }
-
+/* === NEW PAGE === */
+.form-new{
+  padding: 20px;
+  background-color: #FEFFFF;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px gray;
+}
+.show-btn{
+  color: black;
+}
 /* === EDIT PAGE === */
 .edit-btn{
   width: 200px;
